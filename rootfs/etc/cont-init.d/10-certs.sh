@@ -35,7 +35,7 @@ if [ ! -f "$CERT_DIR/web-privkey.pem" ] && [ ! -f "$CERT_DIR/web-fullchain.pem" 
         -nodes \
         -days 3650 \
         -newkey rsa:2048 \
-        -subj "/C=CA/O=github.com\\/jlesage\\/$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/OU=Docker container web access/CN=web.$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').example.com" \
+        -subj "/C=CA/O=github.com\\/kumakichi\\/$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/OU=Docker container web access/CN=web.$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').example.com" \
         -keyout "$CERT_DIR/web-privkey.pem" \
         -out "$CERT_DIR/web-fullchain.pem" \
         > /dev/null 2>&1
@@ -51,7 +51,7 @@ if [ ! -f "$CERT_DIR/vnc-server.pem" ]; then
         -nodes \
         -days 3650 \
         -newkey rsa:2048 \
-        -subj "/C=CA/O=github.com\\/jlesage\\/$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/OU=Docker container VNC access/CN=vnc.$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').example.com" \
+        -subj "/C=CA/O=github.com\\/kumakichi\\/$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/OU=Docker container VNC access/CN=vnc.$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').example.com" \
         -keyout "$TMP_DIR/web-privkey.pem" \
         -out "$TMP_DIR/cert.pem" \
         > /dev/null 2>&1
